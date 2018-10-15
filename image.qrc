@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/movie">
+        <file>myserialport.gif</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>Port1.ico</file>
+    </qresource>
+</RCC>
