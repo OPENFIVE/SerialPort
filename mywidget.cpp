@@ -172,6 +172,7 @@ void MyWidget::on_pushButton_switch_clicked()       //关闭和打开串口
     {
         on_checkBox_autosend_clicked(false);        //使用关闭自动发送槽函数
         emit closeSerialPort();     //发送关闭串口信号
+        cout << "close";
     }
     else
     {
@@ -183,6 +184,7 @@ void MyWidget::on_pushButton_switch_clicked()       //关闭和打开串口
         emit setSerialPortDateBits(ui->comboBox_databit->currentIndex());        //设置serialport端口数据位
         emit setSerialPortStopBits(ui->comboBox_stopbit->currentIndex());       //设置serialport停止位
         emit openSerialPort();      //发送打开串口信号
+        cout << "open";
     }
 }
 

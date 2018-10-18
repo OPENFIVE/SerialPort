@@ -75,13 +75,16 @@ void MySerial::openSerialPort(void)
     if(serialport->isOpen() == false)
     {
         serialport->open(QIODevice::ReadWrite);
+        cout << "try open";
         if(serialport->isOpen() == true)      //等待串口打开
         {
             emit serialIsOpen(true);
+            cout << "emit open";
         }
         else
         {
             emit serialIsOpen(false);
+            cout << "emit CLOSE";
         }
         //测试代码:端口设置
 //        serialport->setPortName(QString("COM4"));
@@ -106,12 +109,9 @@ void MySerial::closeSerialPort(void)        //关闭serialport
     if(serialport->isOpen() == true)        //如果串口处于打开状态,关闭串口
     {
         serialport->close();
+        cout << "try close";
     }
-    if(serialport->isOpen() == true)
-    {
-        emit serialIsOpen(true);
-    }
-    else
+    if(serialport->isOpen() == false)
     {
         emit serialIsOpen(false);
     }
